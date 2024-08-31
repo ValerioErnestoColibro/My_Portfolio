@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dadi di D&D</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #dfbd86;
+        color: white;
+        font-family: MedievalSharp, sans-serif;
+        margin: 0;
+      }
+
+      .container {
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 75px;
+      }
+
+      .dice-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .dice-btn {
+        flex: 1 1 calc(50% - 20px);
+        padding: 10px;
+        font-size: 1.2rem;
+        background-color: #5b3803;
+        color: white;
+        font-family: MedievalSharp, sans-serif;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .dice-btn:hover {
+        background-color: #5b3803b9;
+      }
+
+      .result {
+        margin-top: 10px;
+        font-size: 1.5rem;
+      }
+
+      @media (min-width: 600px) {
+        .dice-btn {
+          flex: 1 1 30%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Dadi di D&D</h1>
+      <div class="dice-container">
+        <button class="dice-btn" onclick="rollDice(4)">D4</button>
+        <button class="dice-btn" onclick="rollDice(6)">D6</button>
+        <button class="dice-btn" onclick="rollDice(8)">D8</button>
+        <button class="dice-btn" onclick="rollDice(10)">D10</button>
+        <button class="dice-btn" onclick="rollDice(12)">D12</button>
+        <button class="dice-btn" onclick="rollDice(20)">D20</button>
+        <button class="dice-btn" onclick="rollDice(100)">D100</button>
+      </div>
+      <div id="result" class="result">
+        <p>Lancia un dado e buona fortuna!</p>
+      </div>
+    </div>
+    <script>
+      function rollDice(sides) {
+        let result;
+        if (sides === 100) {
+          const values = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+          const randomIndex = Math.floor(Math.random() * values.length);
+          result = values[randomIndex];
+        } else {
+          result = Math.floor(Math.random() * sides) + 1;
+        }
+        document.getElementById("result").innerHTML = `
+                <p>Hai lanciato un D${sides}. Risultato: <strong>${result}</strong></p>`;
+      }
+    </script>
+  </body>
+</html>
