@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .calcolatrice {
+        text-align: center;
+        margin: 50px auto;
+        width: 200px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .calcolatrice button {
+        margin: 5px;
+        padding: 10px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+      }
+
+      .calcolatrice button :hover {
+        background-color: #0056b3;
+      }
+    </style>
+    <title>Pagina di esercizio</title>
+  </head>
+  <body>
+    <div class="calcolatrice">
+      <h2>Calcolatrice</h2>
+      <input type="number" id="num1" placeholder="Primo Numero" /><br /><br />
+      <input type="number" id="num2" placeholder="Secondo Numero" /><br /><br />
+      <button onclick="calcola('+')">+</button>
+      <button onclick="calcola('-')">-</button>
+      <button onclick="calcola('*')">*</button>
+      <button onclick="calcola('/')">/</button><br /><br />
+      <button onclick="calcola('=')">=</button>
+      <p id="risultato"></p>
+    </div>
+    <script>
+      let operazioneSelezionata;
+      function calcola(operazione) {
+        if (operazione !== "=") {
+          operazioneSelezionata = operazione;
+        } else {
+          let num1 = parseFloat(document.getElementById("num1").value);
+          let num2 = parseFloat(document.getElementById("num2").value);
+          let risultato;
+
+          switch (operazioneSelezionata) {
+            case "+":
+              risultato = num1 + num2;
+              break;
+            case "-":
+              risultato = num1 - num2;
+              break;
+            case "*":
+              risultato = num1 * num2;
+              break;
+            case "/":
+              risultato = num1 / num2;
+              break;
+          }
+          document.getElementById("risultato").innerText =
+            "Risultato: " + risultato;
+        }
+      }
+    </script>
+  </body>
+</html>
