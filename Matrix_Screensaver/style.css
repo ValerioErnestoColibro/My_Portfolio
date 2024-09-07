@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+}
+
+.matrix {
+  width: 50em;
+  margin: 0 auto;
+}
+
+p {
+  font-size: 1.3em;
+  text-orientation: upright;
+  writing-mode: vertical-rl;
+  display: inline-block;
+}
+
+p span {
+  animation: matrix 1.5s linear infinite;
+  opacity: 0;
+}
+
+@keyframes matrix {
+  0% {
+    color: #fff;
+    opacity: 1;
+  }
+
+  5% {
+    color: #2bc235;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
