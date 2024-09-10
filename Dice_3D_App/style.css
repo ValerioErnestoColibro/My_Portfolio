@@ -46,7 +46,7 @@ body {
 }
 
 .face .dot {
-  width: 10px; /* Ridotto per evitare sovrapposizioni */
+  width: 10px;
   height: 10px;
   background-color: black;
   border-radius: 50%;
@@ -220,15 +220,15 @@ body {
 
 .roll {
   cursor: pointer;
-  color: #388e3c;
+  color: rgb(0, 150, 0);
   padding: 6px 12px;
   border-radius: 3px;
   font-size: 16px;
-  border: 2px solid #388e3c;
+  border: 2px solid rgb(0, 150, 0);
   transition: 0.4s;
 }
 
 .roll:hover {
-  color: #fff;
-  background-color: #388e3c;
+  color: white;
+  background-color: rgb(0, 150, 0);
 }
